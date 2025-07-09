@@ -1,4 +1,4 @@
-import flowchartImage from "@/assets/ai-lead-generation-flowchart.png";
+import flowchartImage from "@/assets/ai-lead-generation-flowchart-english.png";
 
 const Index = () => {
   return (
