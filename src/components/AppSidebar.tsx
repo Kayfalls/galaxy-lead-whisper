@@ -38,6 +38,7 @@ const navigationItems = [
   { title: "Team", url: "/team", icon: Users },
   { title: "Compliance", url: "/compliance", icon: Shield },
   { title: "Settings", url: "/settings", icon: Settings },
+  { title: "About Us", url: "/about", icon: Users },
 ];
 
 export function AppSidebar() {
