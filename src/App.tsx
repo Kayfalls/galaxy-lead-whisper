@@ -18,6 +18,9 @@ import Team from "./pages/Team";
 import Compliance from "./pages/Compliance";
 import Settings from "./pages/Settings";
 import AboutUs from "./pages/AboutUs";
+import Recording from "./pages/Recording";
+import CRM from "./pages/CRM";
+import Calendar from "./pages/Calendar";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,12 +43,15 @@ const App = () => (
                   <Route path="/leads" element={<Leads />} />
                   <Route path="/voice" element={<Voice />} />
                   <Route path="/calls" element={<CallExecution />} />
+                  <Route path="/recording" element={<Recording />} />
                   <Route path="/analytics" element={<Analytics />} />
                   <Route path="/scoring" element={<LeadScoring />} />
                   <Route path="/conversations" element={<Conversations />} />
                   <Route path="/team" element={<Team />} />
                   <Route path="/compliance" element={<Compliance />} />
                   <Route path="/settings" element={<Settings />} />
+                  <Route path="/crm" element={<CRM />} />
+                  <Route path="/calendar" element={<Calendar />} />
                   <Route path="/about" element={<AboutUs />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />

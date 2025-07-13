@@ -10,7 +10,8 @@ import {
   Shield,
   Target,
   TrendingUp,
-  Users
+  Users,
+  Calendar
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -40,6 +41,8 @@ const navigationItems = [
   { title: "Team", url: "/team", icon: Users },
   { title: "Compliance", url: "/compliance", icon: Shield },
   { title: "Settings", url: "/settings", icon: Settings },
+  { title: "CRM", url: "/crm", icon: Users },
+  { title: "Calendar", url: "/calendar", icon: Calendar },
   { title: "About Us", url: "/about", icon: Users },
 ];
 
