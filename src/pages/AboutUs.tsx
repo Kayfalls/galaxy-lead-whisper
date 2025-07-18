@@ -57,8 +57,12 @@ export default function AboutUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="flex-1 space-y-12 p-8 max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-primary/10 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 -translate-y-48 translate-x-48"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 translate-y-48 -translate-x-48"></div>
+      <div className="relative flex-1 space-y-12 p-8 max-w-7xl mx-auto">
         {/* Hero Section */}
         <div className="text-center space-y-6 py-12">
           <div className="flex justify-center">
@@ -82,9 +86,9 @@ export default function AboutUs() {
         {/* Stats Section */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <Card key={stat.title} className="text-center bg-card/50 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card key={stat.title} className="text-center bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-card/90">
               <CardContent className="pt-8 pb-8">
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-2">{stat.value}</div>
                 <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
               </CardContent>
             </Card>
@@ -92,8 +96,8 @@ export default function AboutUs() {
         </div>
 
         {/* Mission Section */}
-        <Card className="bg-card/50 backdrop-blur-sm border-0 shadow-lg">
-          <CardHeader className="pb-6">
+        <Card className="bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl">
+          <CardHeader className="pb-6 bg-gradient-to-r from-primary/5 to-transparent rounded-t-lg">
             <CardTitle className="flex items-center gap-3 text-2xl">
               <div className="p-2 rounded-lg bg-primary/10">
                 <Award className="h-6 w-6 text-primary" />
@@ -119,9 +123,9 @@ export default function AboutUs() {
           <h2 className="text-3xl font-bold text-center">Why Choose Our Platform?</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
-              <Card key={feature.title} className="bg-card/50 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 p-3 rounded-xl bg-primary/10 w-fit">
+              <Card key={feature.title} className="bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+                <CardHeader className="text-center pb-4 bg-gradient-to-b from-primary/5 to-transparent rounded-t-lg">
+                  <div className="mx-auto mb-4 p-3 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 w-fit group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300">
                     <feature.icon className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
@@ -139,9 +143,9 @@ export default function AboutUs() {
           <h2 className="text-3xl font-bold text-center">Meet Our Team</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {teamMembers.map((member) => (
-              <Card key={member.name} className="bg-card/50 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <Card key={member.name} className="bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                <CardHeader className="text-center pb-4 bg-gradient-to-b from-primary/5 to-transparent rounded-t-lg">
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:from-primary/40 group-hover:to-primary/20 transition-all duration-300">
                     <Users className="h-10 w-10 text-primary" />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
@@ -156,8 +160,8 @@ export default function AboutUs() {
         </div>
 
         {/* Technology Section */}
-        <Card className="bg-card/50 backdrop-blur-sm border-0 shadow-lg">
-          <CardHeader className="pb-6">
+        <Card className="bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl">
+          <CardHeader className="pb-6 bg-gradient-to-r from-primary/5 to-transparent rounded-t-lg">
             <CardTitle className="flex items-center gap-3 text-2xl">
               <div className="p-2 rounded-lg bg-primary/10">
                 <Zap className="h-6 w-6 text-primary" />
@@ -168,29 +172,29 @@ export default function AboutUs() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="p-4 bg-gradient-to-br from-muted/30 to-muted/10 rounded-lg">
-                <h4 className="font-semibold mb-3 text-lg">AI Voice Engine</h4>
+              <div className="p-6 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-xl border border-primary/20 hover:border-primary/30 transition-all duration-300">
+                <h4 className="font-semibold mb-3 text-lg text-primary">AI Voice Engine</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Our proprietary AI voice technology uses advanced natural language processing to create 
                   conversations that feel authentic and engaging.
                 </p>
               </div>
-              <div className="p-4 bg-gradient-to-br from-muted/30 to-muted/10 rounded-lg">
-                <h4 className="font-semibold mb-3 text-lg">Smart Lead Scoring</h4>
+              <div className="p-6 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-xl border border-primary/20 hover:border-primary/30 transition-all duration-300">
+                <h4 className="font-semibold mb-3 text-lg text-primary">Smart Lead Scoring</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Machine learning algorithms analyze thousands of data points to identify the highest-quality 
                   prospects and optimize conversion rates.
                 </p>
               </div>
-              <div className="p-4 bg-gradient-to-br from-muted/30 to-muted/10 rounded-lg">
-                <h4 className="font-semibold mb-3 text-lg">Real-time Analytics</h4>
+              <div className="p-6 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-xl border border-primary/20 hover:border-primary/30 transition-all duration-300">
+                <h4 className="font-semibold mb-3 text-lg text-primary">Real-time Analytics</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Comprehensive dashboards provide instant insights into campaign performance, call quality, 
                   and lead progression.
                 </p>
               </div>
-              <div className="p-4 bg-gradient-to-br from-muted/30 to-muted/10 rounded-lg">
-                <h4 className="font-semibold mb-3 text-lg">Enterprise Security</h4>
+              <div className="p-6 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-xl border border-primary/20 hover:border-primary/30 transition-all duration-300">
+                <h4 className="font-semibold mb-3 text-lg text-primary">Enterprise Security</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Bank-level encryption, SOC 2 compliance, and strict data privacy controls protect your 
                   business and customer information.
@@ -202,8 +206,8 @@ export default function AboutUs() {
 
         {/* Contact Section */}
         <div className="grid gap-8 md:grid-cols-2">
-          <Card className="bg-card/50 backdrop-blur-sm border-0 shadow-lg">
-            <CardHeader className="pb-6">
+          <Card className="bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl">
+            <CardHeader className="pb-6 bg-gradient-to-r from-primary/5 to-transparent rounded-t-lg">
               <CardTitle className="flex items-center gap-3 text-xl">
                 <div className="p-2 rounded-lg bg-primary/10">
                   <Mail className="h-5 w-5 text-primary" />
@@ -235,8 +239,8 @@ export default function AboutUs() {
           </CardContent>
         </Card>
 
-          <Card className="bg-card/50 backdrop-blur-sm border-0 shadow-lg">
-            <CardHeader className="pb-6">
+          <Card className="bg-card/80 backdrop-blur-md border border-primary/20 shadow-xl">
+            <CardHeader className="pb-6 bg-gradient-to-r from-primary/5 to-transparent rounded-t-lg">
               <CardTitle className="text-xl">Company Information</CardTitle>
             </CardHeader>
           <CardContent className="space-y-4">
