@@ -3,14 +3,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Phone, 
+  Search, 
   Users, 
   TrendingUp, 
   Clock,
-  PhoneCall,
+  Database,
   UserCheck,
   Target,
-  BarChart3
+  BarChart3,
+  Globe,
+  Zap
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -23,17 +25,17 @@ export default function Dashboard() {
       color: "text-blue-600"
     },
     {
-      title: "Total Leads",
+      title: "Leads Generated",
       value: "2,847",
       change: "+12.3%", 
       icon: Users,
       color: "text-green-600"
     },
     {
-      title: "Calls Today",
+      title: "Sources Scanned",
       value: "156",
       change: "+8.1%",
-      icon: Phone,
+      icon: Search,
       color: "text-orange-600"
     },
     {
@@ -46,10 +48,10 @@ export default function Dashboard() {
   ];
 
   const recentCampaigns = [
-    { name: "Q4 Enterprise Outreach", status: "Active", progress: 67, calls: 234 },
-    { name: "SMB Holiday Campaign", status: "Active", progress: 45, calls: 189 },
-    { name: "Product Demo Series", status: "Paused", progress: 23, calls: 87 },
-    { name: "Renewal Campaign", status: "Active", progress: 89, calls: 312 }
+    { name: "LinkedIn Enterprise Leads", status: "Active", progress: 67, leads: 234 },
+    { name: "Tech Startup Directory", status: "Active", progress: 45, leads: 189 },
+    { name: "Social Media Mining", status: "Paused", progress: 23, leads: 87 },
+    { name: "Website Visitors Analysis", status: "Active", progress: 89, leads: 312 }
   ];
 
   return (
@@ -64,8 +66,11 @@ export default function Dashboard() {
               Welcome back! Here's what's happening with your campaigns.
             </p>
           </div>
-          <Button className="gap-2 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90">
-            <Phone className="w-4 h-4" />
+          <Button 
+            className="gap-2 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary/90"
+            onClick={() => window.location.href = '/campaigns'}
+          >
+            <Zap className="w-4 h-4" />
             New Campaign
           </Button>
         </div>
@@ -128,8 +133,8 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className="text-right ml-6">
-                    <div className="text-sm text-muted-foreground mb-1">Calls Made</div>
-                    <div className="text-2xl font-bold text-primary">{campaign.calls}</div>
+                    <div className="text-sm text-muted-foreground mb-1">Leads Found</div>
+                    <div className="text-2xl font-bold text-primary">{campaign.leads}</div>
                   </div>
                 </div>
               ))}
@@ -153,11 +158,11 @@ export default function Dashboard() {
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-green-50 to-green-50/50 rounded-lg border-l-4 border-green-500">
                   <div className="p-2 rounded-lg bg-green-100">
-                    <PhoneCall className="w-4 h-4 text-green-600" />
+                    <Database className="w-4 h-4 text-green-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">Call completed successfully</p>
-                    <p className="text-sm text-muted-foreground">Enterprise Outreach campaign • 2 min ago</p>
+                    <p className="font-medium">Lead data extracted successfully</p>
+                    <p className="text-sm text-muted-foreground">LinkedIn Enterprise campaign • 2 min ago</p>
                   </div>
                 </div>
                 
@@ -166,8 +171,8 @@ export default function Dashboard() {
                     <UserCheck className="w-4 h-4 text-blue-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">New qualified lead</p>
-                    <p className="text-sm text-muted-foreground">SMB Holiday Campaign • 15 min ago</p>
+                    <p className="font-medium">High-quality lead identified</p>
+                    <p className="text-sm text-muted-foreground">Tech Startup Directory • 15 min ago</p>
                   </div>
                 </div>
                 
@@ -183,11 +188,11 @@ export default function Dashboard() {
                 
                 <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-orange-50 to-orange-50/50 rounded-lg border-l-4 border-orange-500">
                   <div className="p-2 rounded-lg bg-orange-100">
-                    <Target className="w-4 h-4 text-orange-600" />
+                    <Globe className="w-4 h-4 text-orange-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">Campaign optimization suggested</p>
-                    <p className="text-sm text-muted-foreground">Product Demo Series • 2 hours ago</p>
+                    <p className="font-medium">New data source discovered</p>
+                    <p className="text-sm text-muted-foreground">Social Media Mining • 2 hours ago</p>
                   </div>
                 </div>
               </div>
