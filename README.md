@@ -1,73 +1,212 @@
-# Welcome to your Lovable project
+# AI Lead Generation Platform
 
-## Project info
+A comprehensive AI-powered lead generation platform built with React, TypeScript, and modern web technologies. This platform provides advanced features for campaign management, voice automation, lead scoring, and analytics.
 
-**URL**: https://lovable.dev/projects/9ba5ab05-6dba-4b83-9f02-5a843fa1ce7f
+## 🚀 Features
 
-## How can I edit this code?
+- **Dashboard Analytics** - Real-time insights and performance metrics
+- **Campaign Management** - Create and manage lead generation campaigns
+- **AI Voice Configuration** - Customize AI voice settings for calls
+- **Call Execution** - Automated voice calling system
+- **Lead Database** - Comprehensive lead management and tracking
+- **Analytics & Reporting** - Detailed performance analytics
+- **Lead Scoring** - AI-powered lead qualification
+- **Team Management** - User and team collaboration tools
+- **Compliance Tools** - Built-in compliance and regulatory features
+- **CRM Integration** - Customer relationship management
+- **Calendar Integration** - Schedule and manage appointments
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Components**: shadcn/ui, Radix UI, Tailwind CSS
+- **Routing**: React Router DOM
+- **State Management**: TanStack Query
+- **Forms**: React Hook Form, Zod validation
+- **Charts**: Recharts
+- **Icons**: Lucide React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9ba5ab05-6dba-4b83-9f02-5a843fa1ce7f) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd ai-lead-generation-platform
+   ```
 
-**Use your preferred IDE**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. **Open your browser**
+   Navigate to `http://localhost:8080`
 
-Follow these steps:
+## 🏗️ Build & Deploy
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Development Build
+```bash
+npm run build:dev
 ```
 
-**Edit a file directly in GitHub**
+### Production Build
+```bash
+npm run build:prod
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Preview Production Build
+```bash
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## 🚀 Deployment to Vercel
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Option 1: Deploy via Vercel CLI
 
-## What technologies are used for this project?
+1. **Install Vercel CLI**
+   ```bash
+   npm i -g vercel
+   ```
 
-This project is built with:
+2. **Login to Vercel**
+   ```bash
+   vercel login
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Deploy**
+   ```bash
+   vercel
+   ```
 
-## How can I deploy this project?
+### Option 2: Deploy via GitHub Integration
 
-Simply open [Lovable](https://lovable.dev/projects/9ba5ab05-6dba-4b83-9f02-5a843fa1ce7f) and click on Share -> Publish.
+1. **Push your code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
 
-## Can I connect a custom domain to my Lovable project?
+2. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up/Login with GitHub
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect the Vite configuration
 
-Yes, you can!
+3. **Configure Environment Variables** (if needed)
+   - In your Vercel project dashboard
+   - Go to Settings → Environment Variables
+   - Add any required environment variables
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Option 3: Deploy via Vercel Dashboard
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. **Prepare your build**
+   ```bash
+   npm run build
+   ```
+
+2. **Upload to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Drag and drop your `dist` folder
+   - Vercel will automatically deploy
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_APP_TITLE=AI Lead Generation Platform
+VITE_API_URL=your-api-url
+VITE_ANALYTICS_ID=your-analytics-id
+```
+
+### Build Configuration
+
+The project uses Vite for building. Key configurations:
+
+- **Output Directory**: `dist/`
+- **Base Path**: `/` (configurable in `vite.config.ts`)
+- **Chunk Splitting**: Optimized for better performance
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── AppSidebar.tsx  # Main navigation sidebar
+│   └── Header.tsx      # Top header component
+├── pages/              # Page components
+│   ├── Dashboard.tsx   # Main dashboard
+│   ├── Campaigns.tsx   # Campaign management
+│   ├── Leads.tsx       # Lead management
+│   └── ...             # Other pages
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── assets/             # Static assets
+└── main.tsx           # App entry point
+```
+
+## 🎨 Customization
+
+### Styling
+- Uses Tailwind CSS for styling
+- Custom theme configuration in `tailwind.config.ts`
+- shadcn/ui components for consistent design
+
+### Adding New Pages
+1. Create a new component in `src/pages/`
+2. Add the route in `src/App.tsx`
+3. Add navigation item in `src/components/AppSidebar.tsx`
+
+## 🔍 Performance Optimization
+
+- **Code Splitting**: Automatic chunk splitting for better loading
+- **Lazy Loading**: Components loaded on demand
+- **Image Optimization**: Optimized asset loading
+- **Caching**: Proper cache headers for static assets
+
+## 🛡️ Security
+
+- **HTTPS**: Automatic SSL/TLS encryption on Vercel
+- **CSP Headers**: Content Security Policy headers
+- **XSS Protection**: Built-in React security features
+
+## 📊 Analytics
+
+The platform includes built-in analytics capabilities:
+- Performance monitoring
+- User behavior tracking
+- Campaign effectiveness metrics
+- Conversion tracking
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+For support and questions:
+- Create an issue in the GitHub repository
+- Contact the development team
+- Check the documentation
+
+---
+
+**Built with ❤️ using modern web technologies**
